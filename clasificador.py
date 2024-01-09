@@ -16,7 +16,7 @@ faixas = {
     'Radiante':(10001, float('inf'))
        }
 
-if decisao.upper() == "S":
+if decisao.lower() in {'s', 'sim'}:
     while True:
         S = input('Defina seu xp: ')
         if S.isdigit():
@@ -27,7 +27,7 @@ if decisao.upper() == "S":
             print(f'o heroi {nome} com base no seu xp que é {S} ele esta na categoria {categoria}')
             break
 
-elif decisao.upper() == "N":
+elif decisao.lower() in {'n', 'nao', 'não'}:
     xp_aleatorio = random.randint(1,10000)
     print(f'seu xp sera gerado aleatoriamente {xp_aleatorio}')
     for categoria, (valor_mini, valor_max) in faixas.items():
@@ -35,4 +35,4 @@ elif decisao.upper() == "N":
             print(f'o heroi {nome} com base no seu xp que é {xp_aleatorio} ele esta na categoria {categoria}')
             break
 else:
-    print(f'facilita meu codigo namoral é sim ou não, esse {decisao} ta de brincadeira arruma isso ai')
+    print(f'facilita meu codigo namoral é S ou N, esse {decisao} ta de brincadeira arruma isso ai')
